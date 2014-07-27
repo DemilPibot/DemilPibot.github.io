@@ -7,25 +7,27 @@
   -o-transition-duration: $duration
   transition-duration: $duration
 
+html:before
+  position: fixed
+  width: 100%
+  height: 100%
+  display: block
+  content: ""
+  border: 10px solid #fff
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  z-index: 1
+
+html, main
+  height: 100%
+
 body
+  font: 13px serif
+  height: 100%
   margin: 0
   color: #545256
-  border: 10px solid #fff
   background-color: #fafafa
-
-.cover
-  position: relative
-  width: 100%
-  height: 800px
-  background-image: url(#{image_path('cover.jpg')})
-  background-size: cover
-  background-position: top center
-  &:after
-    position: absolute
-    content: ""
-    width: 100%
-    height: 100%
-    // background-color: rgba(0, 0, 0, 0.4)
 
 .side
   position: fixed
@@ -36,6 +38,26 @@ body
   background-color: rgba(255, 255, 255, 0.9)
   z-index: 1
   border-right: 1px solid rgba(212, 213, 212, 0.3)
+
+.gnav
+  position: absolute
+  top: 20px
+  left: 10px
+  font: 15px serif
+  ul
+    list-style: none
+    li
+      display: inline-block
+      padding-right: 20px
+  a
+    text-decoration: none
+    color: #545256
+    line-height: 2.5
+    padding-bottom: 5px
+    &:hover
+      +transition-duration
+      color: #9f8f83
+      border-bottom: 1px solid rgba(159, 143, 131, 0.5)
 
 .info
   position: absolute
@@ -62,6 +84,7 @@ body
       +transition-duration
   .info-time
     margin-top: 36px
+    margin-bottom: 0
     padding: 20px
     border: 1px solid rgba(85, 82, 86, 0.5)
     span
@@ -79,6 +102,9 @@ body
     margin: 0
     padding-top: 24px
     line-height: 1.0
+
+#about
+  text-align: center
 
 .gallery
   position: relative
@@ -100,3 +126,30 @@ body
     text-align: center
     letter-spacing: 0.07em
     z-index: 1
+
+.cd-fixed-bg
+  min-height: 100%
+  background-size: cover
+  background-attachment: fixed
+  background-repeat: no-repeat
+  background-position: top center
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3)
+  &.bg-1
+    background-image: url(#{image_path('cover.jpg')})
+  &.bg-2
+    background-image: url(#{image_path('cover2.jpg')})
+  &.bg-3
+    background-image: url(#{image_path('cover3.jpg')})
+  &.bg-4
+    background-image: url(#{image_path('cover4.jpg')})
+
+.cd-scrolling-bg
+  min-height: 100%
+
+.cd-container
+  position: relative
+.cd-inner
+  position: absolute
+  top: 50px
+  right: 50px
+  left: 485px
