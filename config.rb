@@ -33,5 +33,5 @@ end
 activate :deploy do |deploy|
   deploy.remote = 'git@github.com:DemilPibot/DemilPibot.github.io.git'
   deploy.method = :git
-  deploy.branch = 'gh-pages'
+  deploy.branch = 'master'
 end
