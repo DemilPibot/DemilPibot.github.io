@@ -1,5 +1,8 @@
 @import "compass"
 
+$small: "only screen and (max-width:620px)"
+$middle: "only screen and (max-width:810px)"
+
 @mixin transition-duration($duration: 0.5s)
   -webkit-transition-duration: $duration
   -moz-transition-duration: $duration
@@ -37,12 +40,19 @@ body
   background-color: rgba(255, 255, 255, 0.9)
   z-index: 1
   border-right: 1px solid rgba(212, 213, 212, 0.3)
+  @media #{$middle}
+    position: relative
+    width: 100%
+    height: auto
 
 .gnav
   position: absolute
   top: 20px
   left: 10px
   font: 15px serif
+  @media #{$middle}
+    position: relative
+    font-size: 12px 
   ul
     list-style: none
     li
@@ -64,21 +74,31 @@ body
   padding: 50px
   z-index: 1
   text-align: center
+  @media #{$middle}
+    +box-sizing(border-box)
+    position: relative
+    width: 100%
   h1
     margin: 0 0 24px 0
     font: 60px serif
     letter-spacing: 5px
     line-height: 1.0
+    @media #{$middle}
+      font-size: 40px 
   h2
     font: 15px serif
     letter-spacing: 1px
     text-transform: uppercase
     margin: 0 0 24px
     line-height: 1.0
+    @media #{$middle}
+      font-size: 10px 
     &:hover
       +transition-duration
   p
     font: 16px serif
+    @media #{$middle}
+      font-size: 12px 
     &:hover
       +transition-duration
   .info-time
@@ -89,18 +109,26 @@ body
     span
       color: rgba(85, 82, 86, 0.6)
       font-size: 13px
+      @media #{$middle}
+        font-size: 11px 
   .info-place
     margin-top: 35px
     font-size: 15px
     letter-spacing: 0.07em
+    @media #{$middle}
+      font-size: 12px 
     span
       font-size: 12px
+      @media #{$middle}
+        font-size: 10px 
   .info-title
     border-top: 1px solid rgba(85, 82, 86, 0.5)
     font-size: 37px
     margin: 0
     padding-top: 24px
     line-height: 1.0
+    @media #{$middle}
+      font-size: 20px 
 
 #about
   text-align: center
@@ -133,6 +161,8 @@ body
   background-repeat: no-repeat
   background-position: top center
   box-shadow: inset 0 0 10px rgba(0,0,0,0.3)
+  @media #{$middle}
+    min-height: 300px
   &.bg-1
     background-image: url(#{image_path('cover.jpg')})
   &.bg-2
@@ -143,6 +173,8 @@ body
     background-image: url(#{image_path('cover4.jpg')})
 .cd-scrolling-bg
   min-height: 100%
+  @media #{$middle}
+    min-height: 300px
 
 .cd-container
   position: relative
@@ -150,6 +182,8 @@ body
   margin-left: 485px
   margin-right: 50px
   padding: 50px 0
+  @media #{$middle}
+    margin: 0 
 
 .about-image
   margin-bottom: 50px
@@ -176,8 +210,11 @@ body
   line-height: 2.0
   font-size: 13px
 
-.gallery-list
-  margin: 0
+#gallery
+  @media #{$middle}
+    padding: 0 50px
+  .gallery-list
+    margin: 0
 
 #map
   .map-sag-map
@@ -188,17 +225,31 @@ body
     display: table
     width: 100%
     margin-top: 50px
+    @media #{$middle}
+      margin-top: 0
     .map-sag-logo
+      +box-sizing(border-box)
       display: table-cell
       vertical-align: middle
       border-right: 1px solid rgba(85, 82, 86, 0.5)
       padding: 0 50px
+      @media #{$middle}
+        display: table
+        border-right: none
+        border-bottom: 1px solid rgba(85, 82, 86, 0.5)
+        width: 100%
+        padding: 20px 50px
       img
         width: 167px
     .map-text
+      +box-sizing(border-box)
+      display: table-cell
       display: table-cell
       padding-left: 50px
       vertical-align: middle
+      @media #{$middle}
+        display: block
+        padding: 20px 50px
       a
         color: #545256
         &:hover
